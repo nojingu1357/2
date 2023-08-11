@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div id="header">
+      <h1 id="clock" name="clock"></h1>
+      <p name="quotes">welcom</p>
+    </div>
+    <div id="left_bar">
+      <ul>
+        <li>
+          <a href="">여기다 링크 넣고 누르면 페이지 이동 왼쪽 사이드바</a>
+        </li>
+      </ul>
+    </div>
+    <div id="maincontent">여기다 이번달 사용기록 넣기 오른쪽 메인 뷰</div>
+  </body>
+  <script>
+    const clock = document.querySelector("h1#clock");
+
+    function getClock() {
+      const date = new Date();
+
+      const hours = String(date.getHours()).padStart(2, "0");
+      const minutes = String(date.getMinutes()).padStart(2, "0");
+      const seconds = String(date.getSeconds()).padStart(2, "0");
+
+      clock.innerText = `${hours}:${minutes}:${seconds}`;
+    }
+
+    getClock();
+    setInterval(getClock, 1000);
+  </script>
+</html>
